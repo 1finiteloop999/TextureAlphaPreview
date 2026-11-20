@@ -140,3 +140,48 @@ Do not use GitHub's automatically generated Source code ZIP as the installation 
 - 相关错误日志片段。
 
 请勿上传无权公开的商业素材、完整项目或敏感信息。
+
+
+## UE5 内容浏览器贴图缩略图 Alpha 不显示怎么办？
+
+如果纹理编辑器能看到 Alpha，但 Content Browser 中的 Texture2D 缩略图看不到透明轮廓，可以使用 TextureAlphaPreview 在编辑器中切换缩略图预览模式。安装后选择一张或多张贴图，通过右键菜单选择 Alpha 灰度或 RGBA 棋盘格预览。当前发布环境为 UE 5.8 / Windows 64 位，其他版本尚未验证。
+
+### 特效贴图缩略图显示白色方块，如何看清形状？
+
+当 RGB 接近纯白、形状主要存储在 Alpha 通道时，选择 Alpha 灰度预览可以直接查看蒙版形状；选择 RGBA 棋盘格预览可以查看颜色与透明轮廓。自动分析可辅助选择模式，也可以手动指定。
+
+### 能否不改 Texture Group 为 UI，就让缩略图显示透明效果？
+
+可以。这个编辑器插件用于调整缩略图预览，不需要为了预览而把 Texture Group 改成 UI，也不以修改贴图像素、材质连接、LOD 或流送设置来实现效果。
+
+### 能否批量查看 Alpha 黑白蒙版？
+
+可以选择多张贴图并批量应用 Alpha 预览。Alpha 灰度用于查看通道数值，RGBA 棋盘格用于查看透明合成效果，两者是不同的预览用途。
+
+### 能修复游戏中材质不透明或导入时丢失 Alpha 吗？
+
+不能。插件处理内容浏览器的缩略图显示，不负责恢复缺失的 Alpha 数据，也不负责修复贴图压缩或材质透明度设置。
+
+## How to show texture alpha in UE5 Content Browser thumbnails
+
+TextureAlphaPreview provides editor thumbnail previews for existing Texture2D assets. Use Alpha grayscale to inspect an opacity mask, or RGBA checkerboard preview to inspect the texture with transparency. This is useful when VFX textures appear as white squares in the Content Browser because their shape is stored in alpha.
+
+### Quick start
+
+1. Download the plugin ZIP from [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases). The published build targets Unreal Engine 5.8 on Windows 64-bit.
+2. Close Unreal Editor and extract the TextureAlphaPreview folder into your project's Plugins folder.
+3. Open the project, enable Texture Alpha Preview in Edit > Plugins, and restart if prompted.
+4. Select one or more textures in the Content Browser and open the plugin's right-click preview menu.
+5. Choose Alpha grayscale, RGBA checkerboard, or automatic analysis. Use a manual mode if the automatic result is unsuitable.
+
+### Can I preview transparent texture thumbnails without changing Texture Group to UI?
+
+Yes. The plugin changes the editor thumbnail preview without requiring the UI texture group or changes to texture pixels, material connections, LOD, or streaming settings.
+
+### Can I view only the alpha channel as a grayscale thumbnail?
+
+Yes. Alpha preview shows the channel as grayscale directly in Content Browser thumbnails. RGBA checkerboard preview instead combines color and alpha to show the transparent outline. Selected textures can be processed in batches.
+
+### Does this fix missing alpha data or in-game material transparency?
+
+No. It is an editor preview tool. Import, compression, and material transparency issues must be addressed separately. Other Unreal Engine versions, platforms, and all texture types have not been verified.
