@@ -4,9 +4,9 @@
 
 ## 中文
 
-### UE5 内容浏览器贴图缩略图 Alpha 与透明预览插件
+### UE5 原生内容浏览器网格中的 Texture2D Alpha 预览
 
-TextureAlphaPreview 可以在 Content Browser 中直接查看 Texture2D 的 Alpha 黑白蒙版或 RGBA 透明效果，方便筛选缩略图显示为白色方块、无法辨认轮廓的特效贴图。
+**直接在 UE5 原生内容浏览器的资产网格中，为现有 Texture2D 缩略图提供 Alpha 通道预览。** 支持 Alpha 灰度蒙版与 RGBA 棋盘格透明合成，便于辨认存储在 Alpha 通道中的纹理轮廓。支持批量切换预览模式，无需逐张打开纹理编辑器，也无需修改 Texture Group。
 
 | 预览方式 | 用途 |
 | --- | --- |
@@ -14,7 +14,7 @@ TextureAlphaPreview 可以在 Content Browser 中直接查看 Texture2D 的 Alph
 | RGBA 棋盘格 | 同时查看贴图颜色与透明轮廓 |
 | 自动分析 | 辅助选择预览方式；不合适时可手动指定 |
 
-支持批量处理所选贴图。插件只调整编辑器内的缩略图预览，不需要把 Texture Group 改为 UI，也不以修改贴图像素、材质连接、LOD 或流送设置来实现效果。
+插件仅调整编辑器内的缩略图预览，不以修改贴图像素、材质连接、LOD 或流送设置来实现效果。
 
 ### 下载与兼容性
 
@@ -45,9 +45,9 @@ TextureAlphaPreview 可以在 Content Browser 中直接查看 Texture2D 的 Alph
 
 ### 常见问题与限制
 
-**为什么特效贴图的缩略图是白色方块？**
+**为什么默认缩略图无法呈现 Alpha 通道中的轮廓？**
 
-部分贴图的 RGB 接近纯白，形状主要存储在 Alpha 中。只显示 RGB 时很难辨认，Alpha 灰度适合检查蒙版，RGBA 棋盘格适合查看透明合成效果。
+当纹理形状主要存储在 Alpha 通道时，仅显示 RGB 的预览无法反映该蒙版。Alpha 灰度适合检查通道数据，RGBA 棋盘格适合查看透明合成效果。
 
 **能修复贴图丢失 Alpha 或游戏中的材质不透明吗？**
 
@@ -63,9 +63,9 @@ TextureAlphaPreview 可以在 Content Browser 中直接查看 Texture2D 的 Alph
 
 ## English
 
-### Show texture alpha in UE5 Content Browser thumbnails
+### Texture2D alpha previews in the native UE5 Content Browser grid
 
-TextureAlphaPreview is an Unreal Engine editor plugin for previewing alpha masks and RGBA transparency directly in existing Texture2D thumbnails. It helps identify VFX textures that appear as white squares because their shape is stored in alpha.
+**Preview alpha channels directly in existing Texture2D thumbnails within the native UE5 Content Browser asset grid.** Supports Alpha grayscale masks, RGBA transparency over a checkerboard, and batch preview mode selection, without opening individual textures or changing their Texture Group.
 
 | Preview mode | Use |
 | --- | --- |
@@ -73,7 +73,7 @@ TextureAlphaPreview is an Unreal Engine editor plugin for previewing alpha masks
 | RGBA checkerboard | View texture color with its transparent outline |
 | Automatic analysis | Suggest a preview mode; override manually when needed |
 
-Selected textures can be processed in batches. The plugin changes editor thumbnail previews without requiring Texture Group = UI or changes to texture pixels, material connections, LOD, or streaming settings.
+The plugin changes editor thumbnail previews without modifying texture pixels, material connections, LOD, or streaming settings.
 
 ### Download and compatibility
 
@@ -92,9 +92,9 @@ Try a few textures before applying a mode in bulk. Avoid nesting the plugin insi
 
 ### Questions and limitations
 
-**Why does my VFX texture thumbnail look like a white square?**
+**Why does the default thumbnail not show the shape stored in alpha?**
 
-Some textures have nearly white RGB values and store their shape in alpha. An RGB-only preview hides that shape. Alpha grayscale displays the mask; RGBA checkerboard displays color composited with transparency.
+When a texture stores its shape in the alpha channel, an RGB-only preview does not represent that mask. Alpha grayscale displays the channel data; RGBA checkerboard displays color composited with transparency.
 
 **Does this fix missing alpha data or opaque materials in the game?**
 
