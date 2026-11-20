@@ -1,6 +1,31 @@
-# TextureAlphaPreview
-Unreal Engine texture thumbnail preview tool with Alpha and RGBA preview modes.UE5 纹理缩略图通道预览插件：支持 Alpha、RGBA 棋盘格预览和自动分析，方便筛选特效贴图。
+# TextureAlphaPreview — UE5 Texture Alpha Thumbnail Preview Plugin
 
+TextureAlphaPreview is an Unreal Engine 5 editor plugin that displays
+Texture2D alpha channels and RGBA transparency directly in Content Browser
+thumbnails.
+
+It helps inspect VFX textures whose thumbnails appear as white squares
+because their shape is stored in the alpha channel.
+
+Preview modes include Alpha grayscale and RGBA with a checkerboard
+background, with automatic analysis, manual selection, and batch processing.
+
+There is no need to change Texture Group to UI. The preview does not rely
+on changing texture pixels, material connections, LOD, or streaming settings.
+
+UE5 贴图缩略图 Alpha 通道预览插件：解决内容浏览器中部分特效贴图显示为白色方块、
+无法直接辨认透明轮廓的问题，支持 Alpha 灰度和 RGBA 棋盘格预览。
+
+## Compatibility
+
+- Released for Unreal Engine 5.8 / Windows 64-bit
+- Editor plugin
+- Other engine versions and platforms have not been verified
+
+## Download
+
+Download the plugin ZIP from [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases).
+Do not use GitHub's automatically generated Source code ZIP as the installation package.
 ## 解决什么问题？
 
 部分特效贴图的 RGB 接近纯白，形状信息主要储存在 Alpha 通道中。
