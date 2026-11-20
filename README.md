@@ -2,6 +2,11 @@
 
 [中文](#中文) | [English](#english) | [下载 / Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases)
 
+**Before**
+<img width="2658" height="785" alt="53467283a4773d92c8e02dbf3d1c608b" src="https://github.com/user-attachments/assets/dcba481c-2f37-4e77-9f33-2f9a185a50b2" />
+**After**
+<img width="1333" height="386" alt="c1ae1921132366cad64a2111e0d6f7ec" src="https://github.com/user-attachments/assets/30d9a264-532e-45cc-9078-25d5daf6afc0" />
+
 ## 中文
 
 ### UE5 原生内容浏览器网格中的 Texture2D Alpha 预览
