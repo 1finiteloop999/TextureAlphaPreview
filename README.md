@@ -66,6 +66,7 @@
 ### Texture2D alpha previews in the native UE5 Content Browser grid
 
 **Preview alpha channels directly in existing Texture2D thumbnails within the native UE5 Content Browser asset grid.** Supports Alpha grayscale masks, RGBA transparency over a checkerboard, and batch preview mode selection, without opening individual textures or changing their Texture Group.
+This texture thumbnail preview plugin provides alpha preview modes for existing Texture2D assets directly in the native UE5 Content Browser grid.
 
 | Preview mode | Use |
 | --- | --- |
