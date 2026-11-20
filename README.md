@@ -18,9 +18,11 @@
 
 ### 下载与兼容性
 
-当前发布版本为 **0.1.4，UE 5.8 / Windows 64 位**。其他引擎版本和平台尚未验证，可能需要重新编译。
+当前发布版本为 **0.1.5，UE 5.8 / Windows 64 位**。其他引擎版本和平台尚未验证，可能需要重新编译。
 
-从 [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases) 下载 `TextureAlphaPreview-0.1.4-UE5.8-Win64.zip`。插件包包含编译文件和 Source 源码文件夹；GitHub 自动生成的 `Source code.zip` 不是安装包。
+从 [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases) 下载 `TextureAlphaPreview-0.1.5-UE5.8-Win64.zip`。插件包包含编译文件和 Source 源码文件夹；GitHub 自动生成的 `Source code.zip` 不是安装包。
+
+在 0.1.4 中，重新打开项目后，设置过的缩略图可能又显示为 UE 默认预览。0.1.5 会读取当前项目保存在本机的预览选择，分批刷新缩略图。打开原贴图目录后可以直接查看，无需再次运行自动分析。升级时请保留项目的 `Saved/Config` 目录。
 
 ### 安装与使用
 
@@ -78,9 +80,11 @@ The plugin changes editor thumbnail previews without modifying texture pixels, m
 
 ### Download and compatibility
 
-The current release is **0.1.4 for UE 5.8 / Windows 64-bit**. Other engine versions and platforms have not been verified and may require recompilation.
+The current release is **0.1.5 for UE 5.8 / Windows 64-bit**. Other engine versions and platforms have not been verified and may require recompilation.
 
-Download `TextureAlphaPreview-0.1.4-UE5.8-Win64.zip` from [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases). It includes compiled files and a Source folder. GitHub's automatically generated `Source code.zip` is not the installation package.
+Download `TextureAlphaPreview-0.1.5-UE5.8-Win64.zip` from [Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases). It includes compiled files and a Source folder. GitHub's automatically generated `Source code.zip` is not the installation package.
+
+In 0.1.4, thumbnails could revert to the default UE preview when you reopened a project. Version 0.1.5 reads the preview modes saved locally for that project and refreshes the thumbnails in batches. Reopen the texture folder to see your previews without running automatic analysis again. Keep the project’s `Saved/Config` directory when upgrading.
 
 ### Installation and use
 
