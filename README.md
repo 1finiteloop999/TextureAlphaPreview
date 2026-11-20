@@ -2,6 +2,8 @@
 
 [中文](#中文) | [English](#english) | [下载 / Releases](https://github.com/1finiteloop999/TextureAlphaPreview/releases)
 
+**演示视频链接：** https://www.bilibili.com/video/BV1RQsq6bEoQ
+
 **Before**
 <img width="2658" height="785" alt="53467283a4773d92c8e02dbf3d1c608b" src="https://github.com/user-attachments/assets/dcba481c-2f37-4e77-9f33-2f9a185a50b2" />
 **After**
